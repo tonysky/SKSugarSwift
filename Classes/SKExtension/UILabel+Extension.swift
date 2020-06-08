@@ -19,7 +19,7 @@ extension UILabel {
     ///   - alignment: textAlignment
     ///   - isBold: 当前字体是否加粗
     ///   - tapAction: 点击时的回调
-    convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false)
+    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false)
     {
         self.init(gx_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold, isFredom: false)
     }
@@ -33,7 +33,7 @@ extension UILabel {
     ///   - alignment: textAlignment
     ///   - isBold: 当前字体是否加粗
     ///   - tapAction: 点击时的回调
-    convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, tapAction: @escaping () -> Void = {})
+    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, tapAction: @escaping () -> Void = {})
     {
         self.init(gx_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold, tapAction: tapAction, isFredom: false)
     }
@@ -51,7 +51,7 @@ extension UILabel {
     ///   - isBold: 当前字体是否加粗
     ///   - tapAction: 点击时的 closure 回调
     ///   - isFredom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
-    convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, isFredom: Bool)
+    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, isFredom: Bool)
     {
         self.init()
         
@@ -76,7 +76,7 @@ extension UILabel {
     ///   - isBold: 当前字体是否加粗
     ///   - tapAction: 点击时的 closure 回调
     ///   - isFredom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
-    convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, tapAction: @escaping () -> Void = {}, isFredom: Bool)
+    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, tapAction: @escaping () -> Void = {}, isFredom: Bool)
     {
         self.init()
         
@@ -125,7 +125,7 @@ extension UILabel {
         ct.tapClosure?()
     }
     
-    func addTapGestureAction(tapAction: @escaping () -> Void) {
+    public func addTapGestureAction(tapAction: @escaping () -> Void) {
         container = ClosureContainer()
         container?.tapClosure = tapAction
         
@@ -136,7 +136,7 @@ extension UILabel {
     
     
     /// 闭包容器类
-    class ClosureContainer {
+    public class ClosureContainer {
         var tapClosure: TapClosure?
     }
     
