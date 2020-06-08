@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SKSugarSwift'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of SKSugarSwift.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   # s.ios.platform = :ios, '8.0'
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Classes/*'
+  s.source_files = 'Classes/*', 'Classes/**/*'
   
   s.swift_version = '5.0'
   
