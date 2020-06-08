@@ -1,6 +1,6 @@
 //
-//  SKSugarSwiftUITests.swift
-//  SKSugarSwiftUITests
+//  SKSugarSwiftExampleUITests.swift
+//  SKSugarSwiftExampleUITests
 //
 //  Created by Sky on 2020/6/8.
 //  Copyright © 2020 Sky. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SKSugarSwiftUITests: XCTestCase {
+class SKSugarSwiftExampleUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

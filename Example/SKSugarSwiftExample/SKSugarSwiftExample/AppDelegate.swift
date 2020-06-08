@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SKSugarSwift
+//  SKSugarSwiftExample
 //
 //  Created by Sky on 2020/6/8.
 //  Copyright © 2020 Sky. All rights reserved.

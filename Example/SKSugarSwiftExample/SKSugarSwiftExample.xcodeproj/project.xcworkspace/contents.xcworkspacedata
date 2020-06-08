@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SKSugarSwift.xcodeproj">
+      location = "self:SKSugarSwiftExample.xcodeproj">
    </FileRef>
 </Workspace>
