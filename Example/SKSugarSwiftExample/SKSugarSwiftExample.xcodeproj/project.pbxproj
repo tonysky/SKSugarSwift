@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		335C102A248E3BBE00C6E638 /* SKSugarSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */; };
 		33FEAC8B248E29D0000708BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8A248E29D0000708BD /* AppDelegate.swift */; };
 		33FEAC8D248E29D0000708BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8C248E29D0000708BD /* SceneDelegate.swift */; };
 		33FEAC8F248E29D0000708BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8E248E29D0000708BD /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SKSugarSwift.podspec; path = ../SKSugarSwift.podspec; sourceTree = "<group>"; };
 		33FEAC87248E29D0000708BD /* SKSugarSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKSugarSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FEAC8A248E29D0000708BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33FEAC8C248E29D0000708BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		33FEACBB248E2A70000708BD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */,
 				33FEACBC248E2A70000708BD /* SKExtension */,
 				33FEACBF248E2A70000708BD /* a.swift */,
 			);
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33FEAC97248E29D1000708BD /* LaunchScreen.storyboard in Resources */,
+				335C102A248E3BBE00C6E638 /* SKSugarSwift.podspec in Resources */,
 				33FEAC94248E29D1000708BD /* Assets.xcassets in Resources */,
 				33FEAC92248E29D0000708BD /* Main.storyboard in Resources */,
 			);
