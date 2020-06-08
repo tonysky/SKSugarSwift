@@ -15,6 +15,7 @@
 		332DE499248E1DE10057E7A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332DE497248E1DE10057E7A4 /* LaunchScreen.storyboard */; };
 		332DE4A4248E1DE10057E7A4 /* SKSugarSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332DE4A3248E1DE10057E7A4 /* SKSugarSwiftTests.swift */; };
 		332DE4AF248E1DE10057E7A4 /* SKSugarSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332DE4AE248E1DE10057E7A4 /* SKSugarSwiftUITests.swift */; };
+		332DE4BD248E21280057E7A4 /* Classes in Resources */ = {isa = PBXBuildFile; fileRef = 332DE4BC248E21280057E7A4 /* Classes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		332DE4AA248E1DE10057E7A4 /* SKSugarSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKSugarSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		332DE4AE248E1DE10057E7A4 /* SKSugarSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSugarSwiftUITests.swift; sourceTree = "<group>"; };
 		332DE4B0248E1DE10057E7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		332DE4BC248E21280057E7A4 /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Classes; path = ../../Classes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		332DE480248E1DE00057E7A4 = {
 			isa = PBXGroup;
 			children = (
+				332DE4BC248E21280057E7A4 /* Classes */,
 				332DE48B248E1DE00057E7A4 /* SKSugarSwift */,
 				332DE4A2248E1DE10057E7A4 /* SKSugarSwiftTests */,
 				332DE4AD248E1DE10057E7A4 /* SKSugarSwiftUITests */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				332DE499248E1DE10057E7A4 /* LaunchScreen.storyboard in Resources */,
+				332DE4BD248E21280057E7A4 /* Classes in Resources */,
 				332DE496248E1DE10057E7A4 /* Assets.xcassets in Resources */,
 				332DE494248E1DE00057E7A4 /* Main.storyboard in Resources */,
 			);
@@ -435,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4JZ9937LUN;
 				INFOPLIST_FILE = SKSugarSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4JZ9937LUN;
 				INFOPLIST_FILE = SKSugarSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
