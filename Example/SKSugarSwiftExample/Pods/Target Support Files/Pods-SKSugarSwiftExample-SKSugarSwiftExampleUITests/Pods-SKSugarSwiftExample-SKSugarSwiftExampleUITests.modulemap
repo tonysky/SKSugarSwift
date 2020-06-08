@@ -1,0 +1,6 @@
+framework module Pods_SKSugarSwiftExample_SKSugarSwiftExampleUITests {
+  umbrella header "Pods-SKSugarSwiftExample-SKSugarSwiftExampleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
