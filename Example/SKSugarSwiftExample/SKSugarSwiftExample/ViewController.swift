@@ -16,10 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
-        view.addSubview(label)
-        label.backgroundColor = UIColor.orange
-        
+        setupUI()
     }
 
 
@@ -28,6 +25,20 @@ class ViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         label.frame = CGRect(x: 20, y: 100, width: 200, height: 50)
+    }
+    
+    
+    
+    private func setupUI() {
+        testUI()
+        label.backgroundColor = UIColor(hexStr: "ff0000")
+    }
+    
+    
+    
+    func testUI() {
+        view.addSubview(label)
+        label.backgroundColor = UIColor.orange
     }
 }
 
