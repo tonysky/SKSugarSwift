@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		335C102A248E3BBE00C6E638 /* SKSugarSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */; };
+		335C102C248E467100C6E638 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C102B248E467100C6E638 /* UIColor+Extension.swift */; };
 		33FEAC8B248E29D0000708BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8A248E29D0000708BD /* AppDelegate.swift */; };
 		33FEAC8D248E29D0000708BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8C248E29D0000708BD /* SceneDelegate.swift */; };
 		33FEAC8F248E29D0000708BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8E248E29D0000708BD /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SKSugarSwift.podspec; path = ../SKSugarSwift.podspec; sourceTree = "<group>"; };
+		335C102B248E467100C6E638 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		33FEAC87248E29D0000708BD /* SKSugarSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKSugarSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FEAC8A248E29D0000708BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33FEAC8C248E29D0000708BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				33FEACBD248E2A70000708BD /* UILabel+Extension.swift */,
 				33FEACBE248E2A70000708BD /* Bundle+Extension.swift */,
+				335C102B248E467100C6E638 /* UIColor+Extension.swift */,
 			);
 			path = SKExtension;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335C102C248E467100C6E638 /* UIColor+Extension.swift in Sources */,
 				33FEACC0248E2A70000708BD /* UILabel+Extension.swift in Sources */,
 				33FEACC1248E2A70000708BD /* Bundle+Extension.swift in Sources */,
 				33FEAC8F248E29D0000708BD /* ViewController.swift in Sources */,

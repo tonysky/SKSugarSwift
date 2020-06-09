@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UILabel {    
+public extension UILabel {    
     
-    /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ 创建 label
+    /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ isFreedom/ (^tapAction) 创建 label
     ///
     /// - Parameters:
     ///   - gx_text: text
@@ -18,55 +18,22 @@ extension UILabel {
     ///   - color: textColor
     ///   - alignment: textAlignment
     ///   - isBold: 当前字体是否加粗
-    ///   - tapAction: 点击时的回调
-    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false)
-    {
-        self.init(gx_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold, isFredom: false)
-    }
-    
-    /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ (^tapAction) 创建 label
-    ///
-    /// - Parameters:
-    ///   - gx_text: text
-    ///   - fontSize: fontSize
-    ///   - color: textColor
-    ///   - alignment: textAlignment
-    ///   - isBold: 当前字体是否加粗
-    ///   - tapAction: 点击时的回调
-    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, tapAction: @escaping () -> Void = {})
-    {
-        self.init(gx_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold, tapAction: tapAction, isFredom: false)
-    }
-    
-    
-    
-    
-    /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ isFredom 创建 label
-    ///
-    /// - Parameters:
-    ///   - gx_text: text
-    ///   - fontSize: fontSize
-    ///   - color: textColor
-    ///   - alignment: textAlignment
-    ///   - isBold: 当前字体是否加粗
+    ///   - isFreedom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
     ///   - tapAction: 点击时的 closure 回调
-    ///   - isFredom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
-    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, isFredom: Bool)
+    convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, isFreedom: Bool = false, tapAction: (() -> Void)? = nil)
     {
         self.init()
         
         text = gx_text
         textColor = color
+        textAlignment = alignment
         font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
         
-        textAlignment = alignment
-        
-        if !isFredom {
-            sizeToFit()
-        }
+        if !isFreedom { sizeToFit() }
+        if let action = tapAction { addTapGestureAction(tapAction: action) }
     }
     
-    /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ (^tapAction)/ isFredom 创建 label
+    /// gx_根据 text/ fontSize/ colorHex(UInt32)/ alignment/ isBold/ isFreedom/ (^tapAction) 创建 label
     ///
     /// - Parameters:
     ///   - gx_text: text
@@ -74,33 +41,41 @@ extension UILabel {
     ///   - color: textColor
     ///   - alignment: textAlignment
     ///   - isBold: 当前字体是否加粗
+    ///   - isFreedom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
     ///   - tapAction: 点击时的 closure 回调
-    ///   - isFredom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
-    public convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, tapAction: @escaping () -> Void = {}, isFredom: Bool)
+    convenience init(_ gx_text: String, fontSize: CGFloat = 14, colorHex: UInt32 = 0x000000, alignment: NSTextAlignment = .left, isBold: Bool = false, isFreedom: Bool = false, tapAction: (() -> Void)? = nil)
     {
         self.init()
         
         text = gx_text
-        textColor = color
+        textColor = UIColor(hex: Int32(colorHex))
+        textAlignment = alignment
         font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
         
-        textAlignment = alignment
-        
-        if !isFredom {
-            sizeToFit()
-        }
-        
-        addTapGestureAction(tapAction: tapAction)
+        if !isFreedom { sizeToFit() }
+        if let action = tapAction { addTapGestureAction(tapAction: action) }
     }
-    
-    
 }
+
+
+fileprivate extension UIColor {
+    
+    convenience init (_ hex: UInt32) {
+        self.init(
+            red: CGFloat((hex & 0xFF0000) >> 16) / 255.0, 
+            green: CGFloat((hex & 0x00FF00) >> 8) / 255.0, 
+            blue: CGFloat(hex & 0x0000FF) / 255.0, 
+            alpha: 1
+        )
+    }
+}
+
 
 
 typealias TapClosure = () -> Void
 
 // MARK: - tapAction
-extension UILabel {
+public extension UILabel {
     
     // MARK:- RuntimeKey   动态绑属性
     private struct RuntimeKey {
@@ -108,7 +83,7 @@ extension UILabel {
         static var kTap = "kTap"
     }
     
-    var container: ClosureContainer? {
+    fileprivate var container: ClosureContainer? {
         get {
             return objc_getAssociatedObject(self, &RuntimeKey.kTap) as? ClosureContainer
         }
@@ -125,7 +100,7 @@ extension UILabel {
         ct.tapClosure?()
     }
     
-    public func addTapGestureAction(tapAction: @escaping () -> Void) {
+    func addTapGestureAction(tapAction: @escaping () -> Void) {
         container = ClosureContainer()
         container?.tapClosure = tapAction
         
@@ -136,7 +111,7 @@ extension UILabel {
     
     
     /// 闭包容器类
-    public class ClosureContainer {
+    fileprivate class ClosureContainer {
         var tapClosure: TapClosure?
     }
     
