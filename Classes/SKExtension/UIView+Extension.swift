@@ -8,7 +8,7 @@
 
 import UIKit
 
-private extension UIView {
+public extension UIView {
 
     /// 批量添加子控件，并取消子控件的 translatesAutoresizingMaskIntoConstraints，方便使用自动布局
     func addSubviews(_ views: UIView ...) {
