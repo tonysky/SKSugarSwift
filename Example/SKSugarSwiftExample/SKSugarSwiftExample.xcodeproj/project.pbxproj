@@ -213,10 +213,10 @@
 		33FEACBB248E2A70000708BD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3334EB1F24A888BD0048CCB4 /* UIKit */,
 				335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */,
-				33FEACBC248E2A70000708BD /* SKExtension */,
 				33FEACBF248E2A70000708BD /* a.swift */,
+				33FEACBC248E2A70000708BD /* SKExtension */,
+				3334EB1F24A888BD0048CCB4 /* UIKit */,
 			);
 			name = Classes;
 			path = ../../Classes;

@@ -25,7 +25,6 @@ class SKTextFieldTestController: BaseViewController {
         super.setupUI()
         
         view.addSubview(txt)
-        txt.backgroundColor = UIColor.orange
     }
 
 }
