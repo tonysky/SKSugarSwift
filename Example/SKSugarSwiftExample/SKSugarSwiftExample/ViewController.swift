@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var label = UILabel("哈哈哈", fontSize: 20, color: UIColor.purple, alignment: .right, isBold: true)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,24 +20,26 @@ class ViewController: UIViewController {
 
 
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        label.frame = CGRect(x: 20, y: 100, width: 200, height: 50)
-    }
-    
     
     
     private func setupUI() {
-        testUI()
-        label.backgroundColor = UIColor(hexStr: "ff0000")
+        view.backgroundColor = UIColor.white
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "测试首页", style: .plain, target: self, action: #selector(testHomeAction))
     }
     
-    
-    
-    func testUI() {
-        view.addSubview(label)
-        label.backgroundColor = UIColor.orange
-    }
 }
+
+
+
+extension ViewController {
+    
+    @objc private func testHomeAction() {
+        navigationController?.pushViewController(SKSugarSwiftExampleTestController(), animated: true)
+    }
+    
+    
+}
+
 
