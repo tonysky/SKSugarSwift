@@ -59,11 +59,13 @@ class BaseViewController: UIViewController {
     }
     
     func initVariables_controller() {
-        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction(_:))))
     }
     
     
-    
+    @objc private func tapAction(_ tap: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     
     

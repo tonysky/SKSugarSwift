@@ -7,8 +7,8 @@ target 'SKSugarSwiftExample' do
 
   # Pods for SKSugarSwiftExample
 
-  pod 'SKSugarSwift'
-
+  # pod 'SKSugarSwift'
+  pod 'SnapKit'
 
 
 

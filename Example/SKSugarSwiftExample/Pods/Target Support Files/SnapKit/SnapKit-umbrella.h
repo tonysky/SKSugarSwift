@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SKSugarSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char SKSugarSwiftVersionString[];
+FOUNDATION_EXPORT double SnapKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
 

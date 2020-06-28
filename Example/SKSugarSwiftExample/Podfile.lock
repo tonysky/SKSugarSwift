@@ -1,16 +1,16 @@
 PODS:
-  - SKSugarSwift (0.1.1)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - SKSugarSwift
+  - SnapKit
 
 SPEC REPOS:
   trunk:
-    - SKSugarSwift
+    - SnapKit
 
 SPEC CHECKSUMS:
-  SKSugarSwift: 752db3d70b527a89c68c975cb759d9983c09b685
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 59cd9535a7135abf3bfc029c34376a9ba241a3f9
+PODFILE CHECKSUM: 978924da1f9be8512c2d38171ca28ef3612d4854
 
 COCOAPODS: 1.9.3

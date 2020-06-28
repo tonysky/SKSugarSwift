@@ -11,7 +11,7 @@ import UIKit
 class SKTextFieldTestController: BaseViewController {
     
     
-    private lazy var txt: SKTextField = SKTextField(frame: CGRect(x: 20, y: 100, width: 100, height: 40))
+    private lazy var txt: SKTextField = SKTextField("", fontSize: 14, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", isBold: true, textAlignment: .left)
     
 
     override func viewDidLoad() {
@@ -25,6 +25,42 @@ class SKTextFieldTestController: BaseViewController {
         super.setupUI()
         
         view.addSubview(txt)
+        txt.delegate = self
+        
+        txt.textColor = UIColor.red
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        txt.frame = CGRect(x: 20, y: 100, width: 100, height: 80)
     }
 
+}
+
+
+
+// MARK: -  SKTextFieldDelegate
+
+extension SKTextFieldTestController : UITextViewDelegate {
+    
+//    func textViewDidChange(_ textView: UITextView) {
+//        (textView as! SKTextField).checkText { (str) in
+//            print("checked str =", str)
+//            
+//            
+//        }
+//    }
+    
+    
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        
+//        (textView as! SKTextField).checkText { (str) in
+//            print("checked str =", str)
+//            
+//            
+//        }
+//        
+//        return true
+//    }
 }
