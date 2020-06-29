@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-        啊哈叫了个鸡得力干将阿萨德刚；来得及
+        包含一些extension和自己封装的常用视图、框架、工具类
+        不断更新中……
                        DESC
 
   s.homepage         = 'https://github.com/tonysky/SKSugarSwift'

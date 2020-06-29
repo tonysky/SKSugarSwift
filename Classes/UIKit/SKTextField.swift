@@ -58,10 +58,11 @@ public class SKTextField: UITextView {
     }
     
     private func setupUI() {
-        backgroundColor = UIColor.gray //test
+        backgroundColor = UIColor.white
+//        backgroundColor = UIColor.gray //test
         
         addSubview(ph)
-        ph.backgroundColor = UIColor(hex: 0xf5f5f5)
+        ph.backgroundColor = UIColor(hex: 0xf5f5f5) //test
     }
     
     
@@ -74,7 +75,8 @@ public class SKTextField: UITextView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        ph.frame = CGRect(x: 5, y: 7, width: bounds.width - 10, height: bounds.height - 14)
+        // ph.frame = CGRect(x: 5, y: 7, width: bounds.width - 10, height: bounds.height - 14)
+        updatePlaceholderFrame()
         if isAutoHeight && newTextFrame != CGRect.zero && self.frame != newTextFrame {
             self.frame = newTextFrame
         }
@@ -88,7 +90,16 @@ public class SKTextField: UITextView {
         ph.text = placeholder
     }
     
-
+    private func updatePlaceholderFrame() {
+        let phSize = ph.textRect(forBounds: CGRect(x: 0, y: 0, width: bounds.width - 10, height: bounds.height - 14), limitedToNumberOfLines: 0).size
+        print("phSize =", phSize) //(100.0, 35.0) (86.0, 21.0)
+        
+        let cursorRect = getCursorRect()
+        print("cursorRect =", cursorRect)
+        
+        ph.frame = CGRect(x: 5, y: 5, width: phSize.width + 2, height: phSize.height + 2)
+        print("phFrame =", ph.frame)
+    }
     
     
 }
@@ -160,11 +171,13 @@ extension SKTextField : UITextViewDelegate {
 //        }
 //    }
     
-    private func getCursorRect() {
+    private func getCursorRect() -> CGRect {
         // 获取光标位置
-        guard let textRange = selectedTextRange else { return }
+        guard let textRange = selectedTextRange else { return CGRect.zero }
         let cursorRect = caretRect(for: textRange.end)
         print(cursorRect)
+        
+        return cursorRect
     }
     
 }
