@@ -11,7 +11,7 @@ import UIKit
 class SKTextFieldTestController: BaseViewController {
     
     
-    private lazy var txt: SKTextField = SKTextField("", fontSize: 14, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", textAlignment: .left)
+    private lazy var txt: SKTextField = SKTextField("", fontSize: 17, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", textAlignment: .left)
     
 
     override func viewDidLoad() {
@@ -29,12 +29,14 @@ class SKTextFieldTestController: BaseViewController {
         txt.isAutoHeight = false
         
         txt.textColor = UIColor.red
+        txt.layer.borderColor = UIColor.gray.cgColor
+        txt.layer.borderWidth = 1.0
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        txt.frame = CGRect(x: 20, y: 100, width: 100, height: 35)
+        txt.frame = CGRect(x: 20, y: 100, width: 100, height: 85)
     }
 
 }

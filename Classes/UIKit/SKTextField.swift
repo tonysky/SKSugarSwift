@@ -19,9 +19,18 @@ public class SKTextField: UITextView {
     // MARK: -  public 
     
     /// placeholder 占位符
-    @objc public var placeholder: String = "" { didSet { self.ph.text = placeholder } }
-    @objc public var placeholderColor: UIColor = UIColor.gray { didSet { self.ph.textColor = placeholderColor } }
-    @objc public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 14) { didSet { self.ph.font = placeholderFont} }
+    @objc public var placeholder: String = "" { didSet { 
+        self.ph.text = placeholder
+        self.singleLineLabel.text = "字"
+        } }
+    @objc public var placeholderColor: UIColor = UIColor.gray { didSet { 
+        self.ph.textColor = placeholderColor 
+        self.singleLineLabel.textColor = placeholderColor
+        } }
+    @objc public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 14) { didSet { 
+        self.ph.font = placeholderFont
+        self.singleLineLabel.font = placeholderFont
+        } }
     @objc public var placeholderFontSize: CGFloat = 14 { didSet { self.placeholderFont = UIFont.systemFont(ofSize: placeholderFontSize) } }
     
     /// 是否跟随行数自动调整高度
@@ -32,7 +41,9 @@ public class SKTextField: UITextView {
     
     // MARK: -  private
     
+    /// 占位符Label
     private lazy var ph = UILabel()
+    private lazy var singleLineLabel = UILabel()
     
     private var min_height: CGFloat = 0.0
     private var newTextFrame = CGRect.zero
@@ -62,7 +73,12 @@ public class SKTextField: UITextView {
 //        backgroundColor = UIColor.gray //test
         
         addSubview(ph)
-        ph.backgroundColor = UIColor(hex: 0xf5f5f5) //test
+//        ph.backgroundColor = UIColor(hex: 0xf5f5f5) //test
+        
+        addSubview(singleLineLabel) //test
+        singleLineLabel.backgroundColor = UIColor.red //test
+        singleLineLabel.alpha = 0.2 //test
+        singleLineLabel.isHidden = true //test
     }
     
     
@@ -75,9 +91,8 @@ public class SKTextField: UITextView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        // ph.frame = CGRect(x: 5, y: 7, width: bounds.width - 10, height: bounds.height - 14)
-        updatePlaceholderFrame()
-        if isAutoHeight && newTextFrame != CGRect.zero && self.frame != newTextFrame {
+        DispatchQueue.main.async { self.updatePlaceholderFrame() }
+        if isAutoHeight && newTextFrame != CGRect.zero {
             self.frame = newTextFrame
         }
     }  
@@ -88,18 +103,60 @@ public class SKTextField: UITextView {
         ph.textAlignment = self.textAlignment
         ph.numberOfLines = 0
         ph.text = placeholder
+        
+        bindSingleLineLabel()
+    }
+    private func bindSingleLineLabel() {
+        singleLineLabel.font = placeholderFont
+        singleLineLabel.textAlignment = self.textAlignment
+        singleLineLabel.numberOfLines = 1
+        singleLineLabel.text = "字"
     }
     
-    private func updatePlaceholderFrame() {
-        let phSize = ph.textRect(forBounds: CGRect(x: 0, y: 0, width: bounds.width - 10, height: bounds.height - 14), limitedToNumberOfLines: 0).size
-        print("phSize =", phSize) //(100.0, 35.0) (86.0, 21.0)
+    private func updatePlaceholderFrame() 
+    {
+        let strRect: CGRect = placeholder.boundingRect(with: CGSize(width: bounds.width - 10, height: bounds.height - 7), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: placeholderFont], context: nil)
+        let singleLabelSize = singleLineLabel.textRect(forBounds: CGRect(x: 0, y: 0, width: 50, height: 100), limitedToNumberOfLines: 0).size
         
         let cursorRect = getCursorRect()
-        print("cursorRect =", cursorRect)
+        let singleLineLabel_minY = cursorRect.minY + (cursorRect.height - singleLabelSize.height) / 2;
+        singleLineLabel.frame = CGRect(x: 6, y: singleLineLabel_minY, width: strRect.width + 2, height: singleLabelSize.height)
         
-        ph.frame = CGRect(x: 5, y: 5, width: phSize.width + 2, height: phSize.height + 2)
-        print("phFrame =", ph.frame)
+        let avg = strRect.height / singleLabelSize.height
+        let lines = Int(avg + 0.5)
+        let each_height = strRect.height / CGFloat(lines)
+        let ph_minY = singleLineLabel.frame.minY + (singleLabelSize.height - each_height) / 2;
+        ph.frame = CGRect(x: singleLineLabel.frame.minX, y: ph_minY, width: strRect.width + 2, height: strRect.height + 2)
     }
+//    {
+//        print("\n------------")
+//        
+//        let strRect: CGRect = placeholder.boundingRect(with: CGSize(width: bounds.width - 10, height: bounds.height - 7), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: placeholderFont], context: nil)
+//        print("strRect =", strRect)
+//        
+//        let singleLabelSize = singleLineLabel.textRect(forBounds: CGRect(x: 0, y: 0, width: 50, height: 100), limitedToNumberOfLines: 0).size
+//        print("singleLabelSize =", singleLabelSize)
+//        
+////        let phSize = ph.textRect(forBounds: CGRect(x: 0, y: 0, width: bounds.width - 10, height: bounds.height - 14), limitedToNumberOfLines: 0).size
+////        print("phSize =", phSize) //(100.0, 35.0) (86.0, 21.0)
+//        
+//        let cursorRect = getCursorRect()
+//        print("cursorRect =", cursorRect)
+//        
+//        let singleLineLabel_minY = cursorRect.minY + (cursorRect.height - singleLabelSize.height) / 2;
+//        singleLineLabel.frame = CGRect(x: 6, y: singleLineLabel_minY, width: strRect.width + 2, height: singleLabelSize.height)
+//        print("singleLineLabel_minY =", singleLineLabel_minY, "; singleLineLabel.frame =", singleLineLabel.frame)
+//        
+//        let avg = strRect.height / singleLabelSize.height
+//        let lines = Int(avg + 0.5)
+//        print("\navg =", avg, "; lines =", lines)
+//        let each_height = strRect.height / CGFloat(lines)
+//        print("each_height =", each_height)
+//        
+//        let ph_minY = singleLineLabel.frame.minY + (singleLabelSize.height - each_height) / 2;
+//        ph.frame = CGRect(x: singleLineLabel.frame.minX, y: ph_minY, width: strRect.width + 2, height: strRect.height + 2)
+//        print("ph_minY =", ph_minY, "; phFrame =", ph.frame)
+//    }
     
     
 }
@@ -175,7 +232,7 @@ extension SKTextField : UITextViewDelegate {
         // 获取光标位置
         guard let textRange = selectedTextRange else { return CGRect.zero }
         let cursorRect = caretRect(for: textRange.end)
-        print(cursorRect)
+//        print(cursorRect)
         
         return cursorRect
     }
@@ -191,7 +248,7 @@ extension SKTextField {
     
     /// text=""/ fontSize=14/ textColor=black/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColor=gray/ isPlaceholderBold=false/ textAligment=.left/ isAutoHeight=false
     convenience init (_ text: String = "", fontSize: CGFloat = 14, textColor: UIColor = UIColor.black, isBold: Bool = false, 
-                      placeholder: String = "", placeholderFontSize: CGFloat = 14, placeholderColor: UIColor = UIColor.gray, isPlaceholderBold: Bool = false, 
+                      placeholder: String = "", placeholderFontSize: CGFloat = 0, placeholderColor: UIColor = UIColor.gray, isPlaceholderBold: Bool = false, 
                       textAlignment: NSTextAlignment = .left, isAutoHeight: Bool = false)
     {
         self.init()
@@ -203,8 +260,8 @@ extension SKTextField {
         
         // placeholder
         self.placeholder = placeholder
-        self.placeholderFontSize = placeholderFontSize
-        self.placeholderFont = isPlaceholderBold ? UIFont.boldSystemFont(ofSize: placeholderFontSize) : UIFont.systemFont(ofSize: placeholderFontSize)
+        self.placeholderFontSize = placeholderFontSize == 0 ? fontSize : placeholderFontSize
+        self.placeholderFont = isPlaceholderBold ? UIFont.boldSystemFont(ofSize: self.placeholderFontSize) : UIFont.systemFont(ofSize: self.placeholderFontSize)
         self.placeholderColor = placeholderColor
         
         self.bindPlaceholder()
@@ -215,7 +272,7 @@ extension SKTextField {
     
     /// text=""/ fontSize=14/ textColorHex/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColorHex/ isPlaceholderBold=false/ textAligment=.left/ isAutoHeight=false
     convenience init (_ text: String = "", fontSize: CGFloat = 14, textColorHex: Int32, isBold: Bool = false, 
-                      placeholder: String = "", placeholderFontSize: CGFloat = 14, placeholderColorHex: Int32, isPlaceholderBold: Bool = false, 
+                      placeholder: String = "", placeholderFontSize: CGFloat = 0, placeholderColorHex: Int32, isPlaceholderBold: Bool = false, 
                       textAlignment: NSTextAlignment = .left, isAutoHeight: Bool = false)
     {
         self.init(text, fontSize: fontSize, textColor: UIColor(hex: textColorHex), isBold: isBold, 
