@@ -34,8 +34,12 @@ public class SKTextField: UITextView {
     
     private lazy var ph = UILabel()
     
+    private var min_height: CGFloat = 0.0
+    private var newTextFrame = CGRect.zero
+    
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
+        min_height = frame.height;
         
         setupNote()
         setupUI()
@@ -54,9 +58,10 @@ public class SKTextField: UITextView {
     }
     
     private func setupUI() {
-        backgroundColor = UIColor(hex: 0xf2f2f2) //test
+        backgroundColor = UIColor.gray //test
         
         addSubview(ph)
+        ph.backgroundColor = UIColor(hex: 0xf5f5f5)
     }
     
     
@@ -69,8 +74,10 @@ public class SKTextField: UITextView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-//        print(frame, textContainer.size)
-        ph.frame = CGRect(x: 5, y: 3, width: bounds.width - 10, height: bounds.height - 6)
+        ph.frame = CGRect(x: 5, y: 7, width: bounds.width - 10, height: bounds.height - 14)
+        if isAutoHeight && newTextFrame != CGRect.zero && self.frame != newTextFrame {
+            self.frame = newTextFrame
+        }
     }  
     
     private func bindPlaceholder() {
@@ -86,7 +93,7 @@ public class SKTextField: UITextView {
     
 }
 
-
+// MARK: -  delegate
 extension SKTextField : UITextViewDelegate {
     
     @objc private func txtV_didBeginEditing(_ note: Notification) {
@@ -97,13 +104,68 @@ extension SKTextField : UITextViewDelegate {
         ph.isHidden = text.count > 0
         
         // 过滤
-        checkText { text = $0 }
+        checkText {
+            text = $0
+            
+            // 自动高度处理
+            isAutoHeight ? processAutoHeight() : ()
+        }
     }
     
     @objc private func txtV_didEndEditing(_ note: Notification) {
         
     }
     
+    
+    // MARK: -  mehtod
+    
+    /// 文本框自动高度处理
+    private func processAutoHeight() {
+        if contentSize.height > bounds.height + 10 || contentSize.height < bounds.height - 10
+        { 
+            //需要修改高度
+//            print("modify height")
+            let newHeight = self.contentSize.height;
+            var newFrame = self.frame
+            newFrame.size.height = newHeight
+            self.newTextFrame = newFrame
+            self.frame = newFrame
+        } 
+    }
+    
+//    /// 获取光标视图
+//    private func getCursorView() {
+//        print("textView.subviews =", subviews)
+//        for subv in subviews {
+//            print("subv.subviews =", subv.subviews)
+//            guard let cls = NSClassFromString("_UITextContainerView") else {
+//                continue
+//            }
+//            
+//            if subv.isMember(of: cls) {
+//                print("containerView.subviews =", subv.subviews)
+//                for sub in subv.subviews {
+//                    guard let cls_canvas = NSClassFromString("_UITextViewCanvasView") else {
+//                        continue
+//                    }
+//                    
+//                    if sub.isKind(of: cls_canvas) {
+//                        let canvas = sub
+//                        DispatchQueue.main.async {
+//                            print(canvas.subviews)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    private func getCursorRect() {
+        // 获取光标位置
+        guard let textRange = selectedTextRange else { return }
+        let cursorRect = caretRect(for: textRange.end)
+        print(cursorRect)
+    }
     
 }
 
@@ -114,10 +176,10 @@ extension SKTextField : UITextViewDelegate {
 
 extension SKTextField {
     
-    /// text=""/ fontSize=14/ textColor=black/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColor=gray/ isPlaceholderBold=false/ textAligment=.left
+    /// text=""/ fontSize=14/ textColor=black/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColor=gray/ isPlaceholderBold=false/ textAligment=.left/ isAutoHeight=false
     convenience init (_ text: String = "", fontSize: CGFloat = 14, textColor: UIColor = UIColor.black, isBold: Bool = false, 
                       placeholder: String = "", placeholderFontSize: CGFloat = 14, placeholderColor: UIColor = UIColor.gray, isPlaceholderBold: Bool = false, 
-                      textAlignment: NSTextAlignment = .left)
+                      textAlignment: NSTextAlignment = .left, isAutoHeight: Bool = false)
     {
         self.init()
         
@@ -133,16 +195,19 @@ extension SKTextField {
         self.placeholderColor = placeholderColor
         
         self.bindPlaceholder()
+        
+        // autoHeight
+        self.isAutoHeight = isAutoHeight
     }
     
-    /// text=""/ fontSize=14/ textColorHex/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColorHex/ isPlaceholderBold=false/ textAligment=.left
+    /// text=""/ fontSize=14/ textColorHex/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColorHex/ isPlaceholderBold=false/ textAligment=.left/ isAutoHeight=false
     convenience init (_ text: String = "", fontSize: CGFloat = 14, textColorHex: Int32, isBold: Bool = false, 
                       placeholder: String = "", placeholderFontSize: CGFloat = 14, placeholderColorHex: Int32, isPlaceholderBold: Bool = false, 
-                      textAlignment: NSTextAlignment = .left)
+                      textAlignment: NSTextAlignment = .left, isAutoHeight: Bool = false)
     {
         self.init(text, fontSize: fontSize, textColor: UIColor(hex: textColorHex), isBold: isBold, 
                   placeholder: placeholder, placeholderFontSize: placeholderFontSize, placeholderColor: UIColor(hex: placeholderColorHex), isPlaceholderBold: isPlaceholderBold, 
-                  textAlignment: textAlignment)
+                  textAlignment: textAlignment, isAutoHeight: isAutoHeight)
     }
     
 }
@@ -161,6 +226,10 @@ extension SKTextField {
 //        print("----markedRange =", markedRange)
     }
 }
+
+
+
+
 
 
 

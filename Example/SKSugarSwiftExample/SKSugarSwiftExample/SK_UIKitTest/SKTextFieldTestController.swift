@@ -26,6 +26,7 @@ class SKTextFieldTestController: BaseViewController {
         
         view.addSubview(txt)
         txt.delegate = self
+        txt.isAutoHeight = false
         
         txt.textColor = UIColor.red
     }
@@ -33,7 +34,7 @@ class SKTextFieldTestController: BaseViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        txt.frame = CGRect(x: 20, y: 100, width: 100, height: 80)
+        txt.frame = CGRect(x: 20, y: 100, width: 100, height: 35)
     }
 
 }
