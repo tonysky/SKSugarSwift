@@ -19,10 +19,13 @@ public class SKTextField: UITextView {
     // MARK: -  public 
     
     /// placeholder 占位符
-    @objc public var placeholder: String { didSet { self.ph.text = placeholder } }
+    @objc public var placeholder: String = "" { didSet { self.ph.text = placeholder } }
+    @objc public var placeholderColor: UIColor = UIColor.gray { didSet { self.ph.textColor = placeholderColor } }
+    @objc public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 14) { didSet { self.ph.font = placeholderFont} }
+    @objc public var placeholderFontSize: CGFloat = 14 { didSet { self.placeholderFont = UIFont.systemFont(ofSize: placeholderFontSize) } }
     
     /// 是否跟随行数自动调整高度
-    public var isAutoHeight: Bool = false
+    @objc public var isAutoHeight: Bool = false
     
     
     
@@ -32,7 +35,6 @@ public class SKTextField: UITextView {
     private lazy var ph = UILabel()
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
-        placeholder = ""
         super.init(frame: frame, textContainer: textContainer)
         
         setupNote()
@@ -68,12 +70,12 @@ public class SKTextField: UITextView {
         super.layoutSubviews()
         
 //        print(frame, textContainer.size)
-        ph.frame = bounds
+        ph.frame = CGRect(x: 5, y: 3, width: bounds.width - 10, height: bounds.height - 6)
     }  
     
     private func bindPlaceholder() {
-        ph.font = self.font
-        ph.textColor = self.textColor
+        ph.font = placeholderFont
+        ph.textColor = placeholderColor
         ph.textAlignment = self.textAlignment
         ph.numberOfLines = 0
         ph.text = placeholder
@@ -82,11 +84,6 @@ public class SKTextField: UITextView {
 
     
     
-    // MARK: -  override
-    
-    public override var font: UIFont? { didSet { self.ph.font = font } }
-    
-    public override var textColor: UIColor? { didSet { self.ph.textColor = textColor } }
 }
 
 
@@ -117,7 +114,10 @@ extension SKTextField : UITextViewDelegate {
 
 extension SKTextField {
     
-    convenience init (_ text: String = "", fontSize: CGFloat = 14, textColor: UIColor = UIColor.black, placeholder str: String = "", isBold: Bool = false, textAlignment: NSTextAlignment = .left)
+    /// text=""/ fontSize=14/ textColor=black/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColor=gray/ isPlaceholderBold=false/ textAligment=.left
+    convenience init (_ text: String = "", fontSize: CGFloat = 14, textColor: UIColor = UIColor.black, isBold: Bool = false, 
+                      placeholder: String = "", placeholderFontSize: CGFloat = 14, placeholderColor: UIColor = UIColor.gray, isPlaceholderBold: Bool = false, 
+                      textAlignment: NSTextAlignment = .left)
     {
         self.init()
         
@@ -127,12 +127,23 @@ extension SKTextField {
         self.textAlignment = textAlignment
         
         // placeholder
-        self.placeholder = str
+        self.placeholder = placeholder
+        self.placeholderFontSize = placeholderFontSize
+        self.placeholderFont = isPlaceholderBold ? UIFont.boldSystemFont(ofSize: placeholderFontSize) : UIFont.systemFont(ofSize: placeholderFontSize)
+        self.placeholderColor = placeholderColor
+        
         self.bindPlaceholder()
-        self.ph.text = str
     }
     
-    
+    /// text=""/ fontSize=14/ textColorHex/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColorHex/ isPlaceholderBold=false/ textAligment=.left
+    convenience init (_ text: String = "", fontSize: CGFloat = 14, textColorHex: Int32, isBold: Bool = false, 
+                      placeholder: String = "", placeholderFontSize: CGFloat = 14, placeholderColorHex: Int32, isPlaceholderBold: Bool = false, 
+                      textAlignment: NSTextAlignment = .left)
+    {
+        self.init(text, fontSize: fontSize, textColor: UIColor(hex: textColorHex), isBold: isBold, 
+                  placeholder: placeholder, placeholderFontSize: placeholderFontSize, placeholderColor: UIColor(hex: placeholderColorHex), isPlaceholderBold: isPlaceholderBold, 
+                  textAlignment: textAlignment)
+    }
     
 }
 

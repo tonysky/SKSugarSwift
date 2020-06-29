@@ -11,7 +11,7 @@ import UIKit
 class SKTextFieldTestController: BaseViewController {
     
     
-    private lazy var txt: SKTextField = SKTextField("", fontSize: 14, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", isBold: true, textAlignment: .left)
+    private lazy var txt: SKTextField = SKTextField("", fontSize: 14, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", textAlignment: .left)
     
 
     override func viewDidLoad() {
