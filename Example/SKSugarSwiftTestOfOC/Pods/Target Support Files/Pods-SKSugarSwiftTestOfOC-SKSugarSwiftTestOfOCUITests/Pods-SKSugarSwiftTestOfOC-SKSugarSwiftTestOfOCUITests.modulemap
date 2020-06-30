@@ -1,0 +1,6 @@
+framework module Pods_SKSugarSwiftTestOfOC_SKSugarSwiftTestOfOCUITests {
+  umbrella header "Pods-SKSugarSwiftTestOfOC-SKSugarSwiftTestOfOCUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

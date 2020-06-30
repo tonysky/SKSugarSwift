@@ -1,0 +1,6 @@
+framework module SKSugarSwift {
+  umbrella header "SKSugarSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

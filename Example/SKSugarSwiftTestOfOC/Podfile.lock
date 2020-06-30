@@ -1,0 +1,16 @@
+PODS:
+  - SKSugarSwift (0.2.11)
+
+DEPENDENCIES:
+  - SKSugarSwift
+
+SPEC REPOS:
+  trunk:
+    - SKSugarSwift
+
+SPEC CHECKSUMS:
+  SKSugarSwift: f90f7dbadf3d33a7b419f7159f37eb29c176c5ab
+
+PODFILE CHECKSUM: 72e39d68cb02699b307a7aa15838e47fb02f8ead
+
+COCOAPODS: 1.9.3
