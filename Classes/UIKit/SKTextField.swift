@@ -247,7 +247,7 @@ extension SKTextField : UITextViewDelegate {
 extension SKTextField {
     
     /// text=""/ fontSize=14/ textColor=black/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColor=gray/ isPlaceholderBold=false/ textAligment=.left/ isAutoHeight=false
-    convenience init (_ text: String = "", fontSize: CGFloat = 14, textColor: UIColor = UIColor.black, isBold: Bool = false, 
+    @objc public convenience init (sk_text text: String = "", fontSize: CGFloat = 14, textColor: UIColor = UIColor.black, isBold: Bool = false, 
                       placeholder: String = "", placeholderFontSize: CGFloat = 0, placeholderColor: UIColor = UIColor.gray, isPlaceholderBold: Bool = false, 
                       textAlignment: NSTextAlignment = .left, isAutoHeight: Bool = false)
     {
@@ -271,11 +271,11 @@ extension SKTextField {
     }
     
     /// text=""/ fontSize=14/ textColorHex/ isBold=false/ placeholderStr=""/ placeholderFontSize=14/ placeholderColorHex/ isPlaceholderBold=false/ textAligment=.left/ isAutoHeight=false
-    convenience init (_ text: String = "", fontSize: CGFloat = 14, textColorHex: Int32, isBold: Bool = false, 
+    @objc public convenience init (sk_text text: String = "", fontSize: CGFloat = 14, textColorHex: Int32, isBold: Bool = false, 
                       placeholder: String = "", placeholderFontSize: CGFloat = 0, placeholderColorHex: Int32, isPlaceholderBold: Bool = false, 
                       textAlignment: NSTextAlignment = .left, isAutoHeight: Bool = false)
     {
-        self.init(text, fontSize: fontSize, textColor: UIColor(hex: textColorHex), isBold: isBold, 
+        self.init(sk_text: text, fontSize: fontSize, textColor: UIColor(hex: textColorHex), isBold: isBold, 
                   placeholder: placeholder, placeholderFontSize: placeholderFontSize, placeholderColor: UIColor(hex: placeholderColorHex), isPlaceholderBold: isPlaceholderBold, 
                   textAlignment: textAlignment, isAutoHeight: isAutoHeight)
     }

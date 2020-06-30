@@ -14,6 +14,7 @@ import UIKit
  - 自动换行，并且高度自动跟随行数变化
  */
 
+@objcMembers
 public class SKTextField: UITextView {
     
     // MARK: -  public 

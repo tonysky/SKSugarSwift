@@ -17,6 +17,7 @@
 		335C102A248E3BBE00C6E638 /* SKSugarSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */; };
 		335C102C248E467100C6E638 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C102B248E467100C6E638 /* UIColor+Extension.swift */; };
 		3366B046249087B300120CC0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3366B045249087B300120CC0 /* UIView+Extension.swift */; };
+		33FD172A24AAF16600E11C25 /* SKTextFieldTestOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */; };
 		33FEAC8B248E29D0000708BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8A248E29D0000708BD /* AppDelegate.swift */; };
 		33FEAC8D248E29D0000708BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8C248E29D0000708BD /* SceneDelegate.swift */; };
 		33FEAC8F248E29D0000708BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8E248E29D0000708BD /* ViewController.swift */; };
@@ -61,6 +62,9 @@
 		335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SKSugarSwift.podspec; path = ../SKSugarSwift.podspec; sourceTree = "<group>"; };
 		335C102B248E467100C6E638 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3366B045249087B300120CC0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		33FD172724AAF16500E11C25 /* SKSugarSwiftExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKSugarSwiftExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		33FD172824AAF16600E11C25 /* SKTextFieldTestOCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTextFieldTestOCController.h; sourceTree = "<group>"; };
+		33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTextFieldTestOCController.m; sourceTree = "<group>"; };
 		33FEAC87248E29D0000708BD /* SKSugarSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKSugarSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FEAC8A248E29D0000708BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33FEAC8C248E29D0000708BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			children = (
 				3334EB2324A88A910048CCB4 /* SKUIKitHomeTableViewController.swift */,
 				3334EB2524A88F640048CCB4 /* SKTextFieldTestController.swift */,
+				33FD172824AAF16600E11C25 /* SKTextFieldTestOCController.h */,
+				33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */,
 			);
 			path = SK_UIKitTest;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				33FEAC93248E29D1000708BD /* Assets.xcassets */,
 				33FEAC95248E29D1000708BD /* LaunchScreen.storyboard */,
 				33FEAC98248E29D1000708BD /* Info.plist */,
+				33FD172724AAF16500E11C25 /* SKSugarSwiftExample-Bridging-Header.h */,
 			);
 			path = SKSugarSwiftExample;
 			sourceTree = "<group>";
@@ -329,6 +336,7 @@
 				TargetAttributes = {
 					33FEAC86248E29D0000708BD = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					33FEAC9C248E29D1000708BD = {
 						CreatedOnToolsVersion = 11.5;
@@ -501,6 +509,7 @@
 				33FEACC0248E2A70000708BD /* UILabel+Extension.swift in Sources */,
 				3334EB2124A888D70048CCB4 /* SKTextField.swift in Sources */,
 				3334EB2D24A897170048CCB4 /* SKExtensionHomeTestController.swift in Sources */,
+				33FD172A24AAF16600E11C25 /* SKTextFieldTestOCController.m in Sources */,
 				3334EB3024A89C9D0048CCB4 /* BaseViewController.swift in Sources */,
 				3366B046249087B300120CC0 /* UIView+Extension.swift in Sources */,
 				33FEACC1248E2A70000708BD /* Bundle+Extension.swift in Sources */,
@@ -684,6 +693,7 @@
 			baseConfigurationReference = F90C38109189B7646B53FB6A /* Pods-SKSugarSwiftExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4JZ9937LUN;
 				INFOPLIST_FILE = SKSugarSwiftExample/Info.plist;
@@ -693,6 +703,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.SKSugarSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SKSugarSwiftExample/SKSugarSwiftExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -703,6 +715,7 @@
 			baseConfigurationReference = E85BCBEC241B017BC806B8E5 /* Pods-SKSugarSwiftExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4JZ9937LUN;
 				INFOPLIST_FILE = SKSugarSwiftExample/Info.plist;
@@ -712,6 +725,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.SKSugarSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SKSugarSwiftExample/SKSugarSwiftExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

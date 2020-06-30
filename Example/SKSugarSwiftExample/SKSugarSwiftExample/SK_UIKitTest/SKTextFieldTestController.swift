@@ -11,7 +11,7 @@ import UIKit
 class SKTextFieldTestController: BaseViewController {
     
     
-    private lazy var txt: SKTextField = SKTextField("", fontSize: 17, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", textAlignment: .left)
+    private lazy var txt: SKTextField = SKTextField(sk_text: "", fontSize: 17, textColor: UIColor.purple, placeholder: "我们都有一个家，名字叫中国。兄弟姐妹都很多，景色也不错！", textAlignment: .left)
     
 
     override func viewDidLoad() {
@@ -20,9 +20,15 @@ class SKTextFieldTestController: BaseViewController {
         
     }
     
+    
+    @objc private func ocTest() {
+        navigationController?.pushViewController(SKTextFieldTestOCController(), animated: true)
+    }
 
     override func setupUI() {
         super.setupUI()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "oc版", style: .plain, target: self, action: #selector(ocTest))
         
         view.addSubview(txt)
         txt.delegate = self
