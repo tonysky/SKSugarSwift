@@ -25,8 +25,10 @@
 - (void)setupUI {
     self.view.backgroundColor = UIColor.whiteColor;
     
-    self.txtF = [[SKTextField alloc] initWithSk_text:@"测试" fontSize:15 textColor:UIColor.redColor isBold:false placeholder:@"pl" placeholderFontSize:15 placeholderColor:UIColor.grayColor isPlaceholderBold:false textAlignment:NSTextAlignmentLeft isAutoHeight:false];
+    self.txtF = [[SKTextField alloc] initWithSk_text:@"测试" fontSize:12 textColor:UIColor.redColor isBold:false placeholder:@"pl" placeholderFontSize:12 placeholderColor:UIColor.grayColor isPlaceholderBold:false textAlignment:NSTextAlignmentLeft isAutoHeight:false];
     [self.view addSubview:self.txtF];
+    self.txtF.layer.borderColor = UIColor.lightGrayColor.CGColor;
+    self.txtF.layer.borderWidth = 0.5f;
 }
 
 - (void)viewWillLayoutSubviews {

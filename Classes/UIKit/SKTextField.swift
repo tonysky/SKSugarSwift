@@ -62,10 +62,20 @@ public class SKTextField: UITextView {
     }
     
     
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath != "text" { return }
+        guard let change = change else { return }
+        
+        ph.isHidden = (change[NSKeyValueChangeKey.newKey] as! String).count > 0
+    }
+    
+    
     private func setupNote() {
         NotificationCenter.default.addObserver(self, selector: #selector(txtV_didBeginEditing(_:)), name: UITextView.textDidBeginEditingNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(txtV_didChangeEditing(_:)), name: UITextView.textDidChangeNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(txtV_didEndEditing(_:)), name: UITextView.textDidEndEditingNotification, object: nil)
+        
+        addObserver(self, forKeyPath: "text", options: .new, context: nil)
     }
     
     private func setupUI() {
@@ -75,10 +85,10 @@ public class SKTextField: UITextView {
         addSubview(ph)
 //        ph.backgroundColor = UIColor(hex: 0xf5f5f5) //test
         
-        addSubview(singleLineLabel) //test
-        singleLineLabel.backgroundColor = UIColor.red //test
-        singleLineLabel.alpha = 0.2 //test
-        singleLineLabel.isHidden = true //test
+//        addSubview(singleLineLabel) //test
+//        singleLineLabel.backgroundColor = UIColor.red //test
+//        singleLineLabel.alpha = 0.2 //test
+//        singleLineLabel.isHidden = true //test
     }
     
     
@@ -172,8 +182,8 @@ extension SKTextField : UITextViewDelegate {
         ph.isHidden = text.count > 0
         
         // 过滤
-        checkText {
-            text = $0
+        checkText { _ in
+//            text = $0
             
             // 自动高度处理
             isAutoHeight ? processAutoHeight() : ()
