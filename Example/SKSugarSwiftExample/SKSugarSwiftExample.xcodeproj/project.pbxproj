@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3311A3B824ADC4ED008828D2 /* SKToolsHomeTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3311A3B724ADC4ED008828D2 /* SKToolsHomeTestController.swift */; };
 		3311A3BA24ADC603008828D2 /* SKNetworkManagerTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3311A3B924ADC603008828D2 /* SKNetworkManagerTestController.swift */; };
+		3311A3BE24ADE5BD008828D2 /* SKSugarSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3311A3BD24ADE5BD008828D2 /* SKSugarSwift.podspec */; };
 		3334EB2424A88A910048CCB4 /* SKUIKitHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2324A88A910048CCB4 /* SKUIKitHomeTableViewController.swift */; };
 		3334EB2624A88F640048CCB4 /* SKTextFieldTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2524A88F640048CCB4 /* SKTextFieldTestController.swift */; };
 		3334EB2924A892090048CCB4 /* UIColorExtensionTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2824A892090048CCB4 /* UIColorExtensionTestController.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		3311A3B724ADC4ED008828D2 /* SKToolsHomeTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKToolsHomeTestController.swift; sourceTree = "<group>"; };
 		3311A3B924ADC603008828D2 /* SKNetworkManagerTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNetworkManagerTestController.swift; sourceTree = "<group>"; };
+		3311A3BD24ADE5BD008828D2 /* SKSugarSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SKSugarSwift.podspec; path = ../../SKSugarSwift.podspec; sourceTree = "<group>"; };
 		3334EB2324A88A910048CCB4 /* SKUIKitHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUIKitHomeTableViewController.swift; sourceTree = "<group>"; };
 		3334EB2524A88F640048CCB4 /* SKTextFieldTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextFieldTestController.swift; sourceTree = "<group>"; };
 		3334EB2824A892090048CCB4 /* UIColorExtensionTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTestController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		33FEAC7E248E29D0000708BD = {
 			isa = PBXGroup;
 			children = (
+				3311A3BD24ADE5BD008828D2 /* SKSugarSwift.podspec */,
 				333E420724AD7A7000A2FE99 /* Classes */,
 				33FEAC89248E29D0000708BD /* SKSugarSwiftExample */,
 				33FEACA0248E29D1000708BD /* SKSugarSwiftExampleTests */,
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33FEAC97248E29D1000708BD /* LaunchScreen.storyboard in Resources */,
+				3311A3BE24ADE5BD008828D2 /* SKSugarSwift.podspec in Resources */,
 				33FEAC94248E29D1000708BD /* Assets.xcassets in Resources */,
 				33FEAC92248E29D0000708BD /* Main.storyboard in Resources */,
 			);
