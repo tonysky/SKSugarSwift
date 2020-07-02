@@ -20,7 +20,8 @@ class SKSugarSwiftExampleTestController: SKUIKitHomeTableViewController {
         
         dataSource = [
             ("SKUIKit自定义控件测试", "SKUIKitHomeTableViewController"),
-            ("SKExtension测试", "SKExtensionHomeTestController")
+            ("SKExtension测试", "SKExtensionHomeTestController"),
+            ("工具类测试", "SKToolsHomeTestController")
         ]
     }
 
