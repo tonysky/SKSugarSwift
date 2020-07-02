@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3334EB2124A888D70048CCB4 /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2024A888D70048CCB4 /* SKTextField.swift */; };
 		3334EB2424A88A910048CCB4 /* SKUIKitHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2324A88A910048CCB4 /* SKUIKitHomeTableViewController.swift */; };
 		3334EB2624A88F640048CCB4 /* SKTextFieldTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2524A88F640048CCB4 /* SKTextFieldTestController.swift */; };
 		3334EB2924A892090048CCB4 /* UIColorExtensionTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2824A892090048CCB4 /* UIColorExtensionTestController.swift */; };
 		3334EB2B24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2A24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift */; };
 		3334EB2D24A897170048CCB4 /* SKExtensionHomeTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2C24A897170048CCB4 /* SKExtensionHomeTestController.swift */; };
 		3334EB3024A89C9D0048CCB4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2F24A89C9D0048CCB4 /* BaseViewController.swift */; };
-		335C102A248E3BBE00C6E638 /* SKSugarSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */; };
-		335C102C248E467100C6E638 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C102B248E467100C6E638 /* UIColor+Extension.swift */; };
-		3366B046249087B300120CC0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3366B045249087B300120CC0 /* UIView+Extension.swift */; };
+		3380AE6E24AD773B00BADA96 /* Classes in Resources */ = {isa = PBXBuildFile; fileRef = 3380AE6D24AD773B00BADA96 /* Classes */; };
 		33FD172A24AAF16600E11C25 /* SKTextFieldTestOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */; };
 		33FEAC8B248E29D0000708BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8A248E29D0000708BD /* AppDelegate.swift */; };
 		33FEAC8D248E29D0000708BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8C248E29D0000708BD /* SceneDelegate.swift */; };
@@ -26,9 +23,6 @@
 		33FEAC97248E29D1000708BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33FEAC95248E29D1000708BD /* LaunchScreen.storyboard */; };
 		33FEACA2248E29D1000708BD /* SKSugarSwiftExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEACA1248E29D1000708BD /* SKSugarSwiftExampleTests.swift */; };
 		33FEACAD248E29D1000708BD /* SKSugarSwiftExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEACAC248E29D1000708BD /* SKSugarSwiftExampleUITests.swift */; };
-		33FEACC0248E2A70000708BD /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEACBD248E2A70000708BD /* UILabel+Extension.swift */; };
-		33FEACC1248E2A70000708BD /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEACBE248E2A70000708BD /* Bundle+Extension.swift */; };
-		33FEACC2248E2A70000708BD /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEACBF248E2A70000708BD /* a.swift */; };
 		439F5D0B12B9CC0010975DD5 /* Pods_SKSugarSwiftExample_SKSugarSwiftExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD6DB00197D434F42F3BAAC /* Pods_SKSugarSwiftExample_SKSugarSwiftExampleUITests.framework */; };
 		584852E9DCB3A06DF540DC0C /* Pods_SKSugarSwiftExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41933664749E7A9450ED264 /* Pods_SKSugarSwiftExample.framework */; };
 		B1281A6BEB1D6C9CAF7BB95B /* Pods_SKSugarSwiftExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B446B513CBCED9CA3CC415 /* Pods_SKSugarSwiftExampleTests.framework */; };
@@ -52,16 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3334EB2024A888D70048CCB4 /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		3334EB2324A88A910048CCB4 /* SKUIKitHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUIKitHomeTableViewController.swift; sourceTree = "<group>"; };
 		3334EB2524A88F640048CCB4 /* SKTextFieldTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextFieldTestController.swift; sourceTree = "<group>"; };
 		3334EB2824A892090048CCB4 /* UIColorExtensionTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTestController.swift; sourceTree = "<group>"; };
 		3334EB2A24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSugarSwiftExampleTestController.swift; sourceTree = "<group>"; };
 		3334EB2C24A897170048CCB4 /* SKExtensionHomeTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKExtensionHomeTestController.swift; sourceTree = "<group>"; };
 		3334EB2F24A89C9D0048CCB4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SKSugarSwift.podspec; path = ../SKSugarSwift.podspec; sourceTree = "<group>"; };
-		335C102B248E467100C6E638 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		3366B045249087B300120CC0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3380AE6D24AD773B00BADA96 /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Classes; path = ../../Classes; sourceTree = "<group>"; };
 		33FD172724AAF16500E11C25 /* SKSugarSwiftExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKSugarSwiftExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		33FD172824AAF16600E11C25 /* SKTextFieldTestOCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTextFieldTestOCController.h; sourceTree = "<group>"; };
 		33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTextFieldTestOCController.m; sourceTree = "<group>"; };
@@ -79,9 +70,6 @@
 		33FEACA8248E29D1000708BD /* SKSugarSwiftExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKSugarSwiftExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FEACAC248E29D1000708BD /* SKSugarSwiftExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSugarSwiftExampleUITests.swift; sourceTree = "<group>"; };
 		33FEACAE248E29D1000708BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33FEACBD248E2A70000708BD /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		33FEACBE248E2A70000708BD /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		33FEACBF248E2A70000708BD /* a.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
 		885C4C8B9DC0BD05D1404D8C /* Pods-SKSugarSwiftExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSugarSwiftExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SKSugarSwiftExampleTests/Pods-SKSugarSwiftExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		C2B446B513CBCED9CA3CC415 /* Pods_SKSugarSwiftExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKSugarSwiftExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD6DB00197D434F42F3BAAC /* Pods_SKSugarSwiftExample_SKSugarSwiftExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKSugarSwiftExample_SKSugarSwiftExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,14 +109,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3334EB1F24A888BD0048CCB4 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				3334EB2024A888D70048CCB4 /* SKTextField.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		3334EB2224A889F90048CCB4 /* SK_UIKitTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +140,7 @@
 		33FEAC7E248E29D0000708BD = {
 			isa = PBXGroup;
 			children = (
-				33FEACBB248E2A70000708BD /* Classes */,
+				3380AE6D24AD773B00BADA96 /* Classes */,
 				33FEAC89248E29D0000708BD /* SKSugarSwiftExample */,
 				33FEACA0248E29D1000708BD /* SKSugarSwiftExampleTests */,
 				33FEACAB248E29D1000708BD /* SKSugarSwiftExampleUITests */,
@@ -215,29 +195,6 @@
 				33FEACAE248E29D1000708BD /* Info.plist */,
 			);
 			path = SKSugarSwiftExampleUITests;
-			sourceTree = "<group>";
-		};
-		33FEACBB248E2A70000708BD /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				335C1029248E3BBE00C6E638 /* SKSugarSwift.podspec */,
-				33FEACBF248E2A70000708BD /* a.swift */,
-				33FEACBC248E2A70000708BD /* SKExtension */,
-				3334EB1F24A888BD0048CCB4 /* UIKit */,
-			);
-			name = Classes;
-			path = ../../Classes;
-			sourceTree = "<group>";
-		};
-		33FEACBC248E2A70000708BD /* SKExtension */ = {
-			isa = PBXGroup;
-			children = (
-				33FEACBD248E2A70000708BD /* UILabel+Extension.swift */,
-				335C102B248E467100C6E638 /* UIColor+Extension.swift */,
-				3366B045249087B300120CC0 /* UIView+Extension.swift */,
-				33FEACBE248E2A70000708BD /* Bundle+Extension.swift */,
-			);
-			path = SKExtension;
 			sourceTree = "<group>";
 		};
 		4D30B65914D15E246C87E378 /* Pods */ = {
@@ -374,7 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33FEAC97248E29D1000708BD /* LaunchScreen.storyboard in Resources */,
-				335C102A248E3BBE00C6E638 /* SKSugarSwift.podspec in Resources */,
+				3380AE6E24AD773B00BADA96 /* Classes in Resources */,
 				33FEAC94248E29D1000708BD /* Assets.xcassets in Resources */,
 				33FEAC92248E29D0000708BD /* Main.storyboard in Resources */,
 			);
@@ -504,18 +461,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335C102C248E467100C6E638 /* UIColor+Extension.swift in Sources */,
 				3334EB2924A892090048CCB4 /* UIColorExtensionTestController.swift in Sources */,
-				33FEACC0248E2A70000708BD /* UILabel+Extension.swift in Sources */,
-				3334EB2124A888D70048CCB4 /* SKTextField.swift in Sources */,
 				3334EB2D24A897170048CCB4 /* SKExtensionHomeTestController.swift in Sources */,
 				33FD172A24AAF16600E11C25 /* SKTextFieldTestOCController.m in Sources */,
 				3334EB3024A89C9D0048CCB4 /* BaseViewController.swift in Sources */,
-				3366B046249087B300120CC0 /* UIView+Extension.swift in Sources */,
-				33FEACC1248E2A70000708BD /* Bundle+Extension.swift in Sources */,
 				3334EB2B24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift in Sources */,
 				33FEAC8F248E29D0000708BD /* ViewController.swift in Sources */,
-				33FEACC2248E2A70000708BD /* a.swift in Sources */,
 				3334EB2424A88A910048CCB4 /* SKUIKitHomeTableViewController.swift in Sources */,
 				33FEAC8B248E29D0000708BD /* AppDelegate.swift in Sources */,
 				33FEAC8D248E29D0000708BD /* SceneDelegate.swift in Sources */,
