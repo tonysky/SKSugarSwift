@@ -83,26 +83,24 @@ public extension UILabel {
         static var kTap = "kTap"
     }
     
-    fileprivate var container: ClosureContainer? {
+    fileprivate var runtimeContainer: ClosureContainer? {
         get {
             return objc_getAssociatedObject(self, &RuntimeKey.kTap) as? ClosureContainer
         }
         set {
+            if runtimeContainer != nil { return }
             objc_setAssociatedObject(self, &RuntimeKey.kTap, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
     @objc private func tapAction(_ tap: UITapGestureRecognizer) {   
-        guard let ct = container 
-            else {
-            return
-        }
+        guard let ct = runtimeContainer else { return }
         ct.tapClosure?()
     }
     
     func addTapGestureAction(tapAction: @escaping () -> Void) {
-        container = ClosureContainer()
-        container?.tapClosure = tapAction
+        runtimeContainer = ClosureContainer()
+        runtimeContainer?.tapClosure = tapAction
         
         isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapAction(_:)))

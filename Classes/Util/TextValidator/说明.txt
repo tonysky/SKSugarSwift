@@ -1,0 +1,33 @@
+/// 
+/// 使用策略模式构建针对UITextField文本验证模块
+/// 验证数字、字母、邮件等
+/// 
+
+
+/// 使用方法：
+/// 
+/// 1. 给文本框设置验证策略 
+///     txtNumber.setTextValidator(NumberValidator())
+/// 
+/// 2. 在需要验证的地方调用验证方法 
+///     txtNumber.validate()
+
+
+
+
+
+
+/// ---------------------------------------------------
+
+/// 附加功能：可以直接验证字符串内容
+/// 
+/// str.validate(type: .Number)
+/// 或者
+/// str.validateNumber()
+
+
+
+
+
+
+
