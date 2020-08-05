@@ -14,8 +14,8 @@ class SKExtensionHomeTestController: SKUIKitHomeTableViewController {
         super.viewDidLoad()
 
         dataSource = [
-            ("UIColorExtension测试", "UIColorExtensionTestController")
-            
+            ("UIColorExtension测试", "UIColorExtensionTestController"),
+            ("TableView + Extension 测试", "UITableViewExtensionTestController")
         ]
     }
     

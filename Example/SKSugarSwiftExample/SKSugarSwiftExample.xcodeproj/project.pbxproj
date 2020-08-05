@@ -31,6 +31,8 @@
 		33A7F16624B43874006431F8 /* AbstractTextValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7F15F24B43874006431F8 /* AbstractTextValidator.swift */; };
 		33A7F16724B43874006431F8 /* LetterValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7F16024B43874006431F8 /* LetterValidator.swift */; };
 		33A7F16824B43874006431F8 /* NumberValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7F16124B43874006431F8 /* NumberValidator.swift */; };
+		33F035B924DA5C7D00B0B87C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F035B824DA5C7D00B0B87C /* UITableView+Extension.swift */; };
+		33F035BB24DABF6400B0B87C /* UITableViewExtensionTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F035BA24DABF6400B0B87C /* UITableViewExtensionTestController.swift */; };
 		33FD172A24AAF16600E11C25 /* SKTextFieldTestOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */; };
 		33FEAC8B248E29D0000708BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8A248E29D0000708BD /* AppDelegate.swift */; };
 		33FEAC8D248E29D0000708BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEAC8C248E29D0000708BD /* SceneDelegate.swift */; };
@@ -87,6 +89,8 @@
 		33A7F15F24B43874006431F8 /* AbstractTextValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractTextValidator.swift; sourceTree = "<group>"; };
 		33A7F16024B43874006431F8 /* LetterValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterValidator.swift; sourceTree = "<group>"; };
 		33A7F16124B43874006431F8 /* NumberValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberValidator.swift; sourceTree = "<group>"; };
+		33F035B824DA5C7D00B0B87C /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		33F035BA24DABF6400B0B87C /* UITableViewExtensionTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensionTestController.swift; sourceTree = "<group>"; };
 		33FD172724AAF16500E11C25 /* SKSugarSwiftExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKSugarSwiftExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		33FD172824AAF16600E11C25 /* SKTextFieldTestOCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTextFieldTestOCController.h; sourceTree = "<group>"; };
 		33FD172924AAF16600E11C25 /* SKTextFieldTestOCController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTextFieldTestOCController.m; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			children = (
 				3334EB2C24A897170048CCB4 /* SKExtensionHomeTestController.swift */,
 				3334EB2824A892090048CCB4 /* UIColorExtensionTestController.swift */,
+				33F035BA24DABF6400B0B87C /* UITableViewExtensionTestController.swift */,
 			);
 			path = SKExtensionTest;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				333E420A24AD7A7000A2FE99 /* UILabel+Extension.swift */,
 				333E420B24AD7A7000A2FE99 /* UIView+Extension.swift */,
 				333E420C24AD7A7000A2FE99 /* Bundle+Extension.swift */,
+				33F035B824DA5C7D00B0B87C /* UITableView+Extension.swift */,
 			);
 			path = SKExtension;
 			sourceTree = "<group>";
@@ -588,7 +594,9 @@
 				333E421724AD7A7000A2FE99 /* a.swift in Sources */,
 				3311A3BA24ADC603008828D2 /* SKNetworkManagerTestController.swift in Sources */,
 				333E421424AD7A7000A2FE99 /* UIView+Extension.swift in Sources */,
+				33F035BB24DABF6400B0B87C /* UITableViewExtensionTestController.swift in Sources */,
 				3334EB2D24A897170048CCB4 /* SKExtensionHomeTestController.swift in Sources */,
+				33F035B924DA5C7D00B0B87C /* UITableView+Extension.swift in Sources */,
 				33FD172A24AAF16600E11C25 /* SKTextFieldTestOCController.m in Sources */,
 				333E421224AD7A7000A2FE99 /* UIColor+Extension.swift in Sources */,
 				3334EB3024A89C9D0048CCB4 /* BaseViewController.swift in Sources */,
