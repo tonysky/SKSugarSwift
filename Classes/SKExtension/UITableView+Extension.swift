@@ -9,9 +9,10 @@
 import UIKit
 
 
-
-extension UITableView {
+// MARK: -  便利构造器
+public extension UITableView {
     
+    /// rowHeight
     convenience init(frame fr: CGRect = CGRect(), 
                      style st: UITableView.Style = .plain, 
                      delegate dl: NSObjectProtocol, 
@@ -36,10 +37,10 @@ extension UITableView {
         
         register(cellClass, forCellReuseIdentifier: cellID)
         
-        guard let then = then else { return }
-        then(self)
+        if then != nil { then!(self) } //闭包
     }
     
+    /// astimatedRowHeight
     convenience init(frame fr: CGRect = CGRect(), 
                      style st: UITableView.Style = .plain, 
                      delegate dl: NSObjectProtocol, 
@@ -66,8 +67,7 @@ extension UITableView {
         
         register(cellClass, forCellReuseIdentifier: cellID)
         
-        guard let then = then else { return }
-        then(self)
+        if then != nil { then!(self) } //闭包
     }
     
     
