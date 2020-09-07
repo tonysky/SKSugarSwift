@@ -48,15 +48,19 @@ end
 
 
 
-#1. 修改 .podspec 文件版本号，push工程
+#1. 提交版本
+#   修改 .podspec 文件版本号，push工程
+#
 #2. 打tag，提交tag
 #    //为git打tag, 第一次需要在前面加一个v
 #    git tag "v1.0.0" 
 #    //将tag推送到远程仓库
 #    git push --tags 
+#
 #3. 验证 .podspec文件
 #    // --verbose 如果验证失败会报错误信息
 #    pod spec lint --verbose --allow-warnings
+#
 #4. 发布
 #    pod trunk push --allow-warnings
 
