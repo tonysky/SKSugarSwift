@@ -52,7 +52,7 @@ end
 #   修改 .podspec 文件版本号，push工程
 #
 #2. 打tag，提交tag
-#    //为git打tag, 第一次需要在前面加一个v
+#    //为git打tag, 第一次需要在前面加一个v (跟文件版本号一致)
 #    git tag "v1.0.0" 
 #    //将tag推送到远程仓库
 #    git push --tags 
