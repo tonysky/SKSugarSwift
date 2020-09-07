@@ -84,7 +84,7 @@ fileprivate extension UIColor {
 
 
 
-typealias TapClosure = () -> Void
+public typealias TapClosure = () -> Void
 
 // MARK: - tapAction
 public extension UILabel {
