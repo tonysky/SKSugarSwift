@@ -14,7 +14,7 @@ public extension UITableView {
     
     /// rowHeight
     convenience init(frame fr: CGRect = CGRect(), 
-                     style st: UITableView.Style = .plain, 
+                     style sty: UITableView.Style = .plain, 
                      delegate dl: NSObjectProtocol, 
                      rowHeight rh: CGFloat = 44, 
                      registerCellClass cellClass: AnyClass, 
@@ -23,9 +23,11 @@ public extension UITableView {
                      showsHorizontalScrollIndicator showsHoriIndicator: Bool = false,
                      showsVerticalScrollIndicator showsVertIndicator: Bool = false,
                      bounces bcs: Bool = true,
+                     separatorStyle sepaStyle: UITableViewCell.SeparatorStyle = .none,
                      then: ((_ tv: UITableView)->())? = nil) 
     {
-        self.init(frame: fr, style: st)
+        self.init(frame: fr, style: sty)
+        separatorStyle = sepaStyle
         
         delegate = (dl as! UITableViewDelegate)
         dataSource = (dl as! UITableViewDataSource)
@@ -45,7 +47,7 @@ public extension UITableView {
     
     /// astimatedRowHeight
     convenience init(frame fr: CGRect = CGRect(), 
-                     style st: UITableView.Style = .plain, 
+                     style sty: UITableView.Style = .plain, 
                      delegate dl: NSObjectProtocol,
                      estimatedRowHeight esrh: CGFloat,
                      registerCellClass cellClass: AnyClass, 
@@ -54,25 +56,29 @@ public extension UITableView {
                      showsHorizontalScrollIndicator showsHoriIndicator: Bool = false,
                      showsVerticalScrollIndicator showsVertIndicator: Bool = false,
                      bounces bcs: Bool = true,
+                     separatorStyle sepaStyle: UITableViewCell.SeparatorStyle = .none,
                      then: ((_ tv: UITableView)->())? = nil) 
     {
-        self.init(frame: fr, style: st)
-        
-        delegate = (dl as! UITableViewDelegate)
-        dataSource = (dl as! UITableViewDataSource)
+        self.init(frame: fr, style: sty, delegate: dl, rowHeight: UITableView.automaticDimension, registerCellClass: cellClass, isNib: isNib, cellReuseIdentifier: cellID, showsHorizontalScrollIndicator: showsHoriIndicator, showsVerticalScrollIndicator: showsVertIndicator, bounces: bcs, separatorStyle: sepaStyle, then: then)
         
         estimatedRowHeight = esrh
-        rowHeight = UITableView.automaticDimension
         
-        showsHorizontalScrollIndicator = showsHoriIndicator
-        showsVerticalScrollIndicator = showsVertIndicator
-        bounces = bcs
         
-        isNib 
-            ? register(UINib(nibName: String(cellClass.description().split(separator: ".").last ?? ""), bundle: nil), forCellReuseIdentifier: cellID)
-            : register(cellClass, forCellReuseIdentifier: cellID)
-        
-        if then != nil { then!(self) } //闭包
+//        delegate = (dl as! UITableViewDelegate)
+//        dataSource = (dl as! UITableViewDataSource)
+//        
+//        estimatedRowHeight = esrh
+//        rowHeight = UITableView.automaticDimension
+//        
+//        showsHorizontalScrollIndicator = showsHoriIndicator
+//        showsVerticalScrollIndicator = showsVertIndicator
+//        bounces = bcs
+//        
+//        isNib 
+//            ? register(UINib(nibName: String(cellClass.description().split(separator: ".").last ?? ""), bundle: nil), forCellReuseIdentifier: cellID)
+//            : register(cellClass, forCellReuseIdentifier: cellID)
+//        
+//        if then != nil { then!(self) } //闭包
     }
     
     
