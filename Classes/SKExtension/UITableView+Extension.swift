@@ -18,6 +18,7 @@ public extension UITableView {
                      delegate dl: NSObjectProtocol, 
                      rowHeight rh: CGFloat = 44, 
                      registerCellClass cellClass: AnyClass, 
+                     isNib: Bool = false,
                      cellReuseIdentifier cellID: String,
                      showsHorizontalScrollIndicator showsHoriIndicator: Bool = false,
                      showsVerticalScrollIndicator showsVertIndicator: Bool = false,
@@ -35,7 +36,9 @@ public extension UITableView {
         showsVerticalScrollIndicator = showsVertIndicator
         bounces = bcs
         
-        register(cellClass, forCellReuseIdentifier: cellID)
+        isNib 
+            ? register(UINib(nibName: String(cellClass.description().split(separator: ".").last ?? ""), bundle: nil), forCellReuseIdentifier: cellID)
+            : register(cellClass, forCellReuseIdentifier: cellID)
         
         if then != nil { then!(self) } //闭包
     }
@@ -47,6 +50,7 @@ public extension UITableView {
                      rowHeight rh: CGFloat, 
                      astimatedRowHeight esrh: CGFloat,
                      registerCellClass cellClass: AnyClass, 
+                     isNib: Bool = false,
                      cellReuseIdentifier cellID: String,
                      showsHorizontalScrollIndicator showsHoriIndicator: Bool = false,
                      showsVerticalScrollIndicator showsVertIndicator: Bool = false,
@@ -65,7 +69,9 @@ public extension UITableView {
         showsVerticalScrollIndicator = showsVertIndicator
         bounces = bcs
         
-        register(cellClass, forCellReuseIdentifier: cellID)
+        isNib 
+            ? register(UINib(nibName: String(cellClass.description().split(separator: ".").last ?? ""), bundle: nil), forCellReuseIdentifier: cellID)
+            : register(cellClass, forCellReuseIdentifier: cellID)
         
         if then != nil { then!(self) } //闭包
     }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol ColorSelectorable {
+    
+}
+
 public extension UILabel {    
     
     /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ isFreedom/ (^tapAction) 创建 label
