@@ -46,9 +46,8 @@ public extension UITableView {
     /// astimatedRowHeight
     convenience init(frame fr: CGRect = CGRect(), 
                      style st: UITableView.Style = .plain, 
-                     delegate dl: NSObjectProtocol, 
-                     rowHeight rh: CGFloat, 
-                     astimatedRowHeight esrh: CGFloat,
+                     delegate dl: NSObjectProtocol,
+                     estimatedRowHeight esrh: CGFloat,
                      registerCellClass cellClass: AnyClass, 
                      isNib: Bool = false,
                      cellReuseIdentifier cellID: String,
@@ -62,8 +61,8 @@ public extension UITableView {
         delegate = (dl as! UITableViewDelegate)
         dataSource = (dl as! UITableViewDataSource)
         
-        rowHeight = rh
         estimatedRowHeight = esrh
+        rowHeight = UITableView.automaticDimension
         
         showsHorizontalScrollIndicator = showsHoriIndicator
         showsVerticalScrollIndicator = showsVertIndicator
