@@ -16,6 +16,7 @@
 		3334EB2B24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2A24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift */; };
 		3334EB2D24A897170048CCB4 /* SKExtensionHomeTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2C24A897170048CCB4 /* SKExtensionHomeTestController.swift */; };
 		3334EB3024A89C9D0048CCB4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334EB2F24A89C9D0048CCB4 /* BaseViewController.swift */; };
+		333D02BB253E95D300B1E85A /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D02BA253E95D300B1E85A /* UIButton+Extension.swift */; };
 		333E421224AD7A7000A2FE99 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E420924AD7A7000A2FE99 /* UIColor+Extension.swift */; };
 		333E421324AD7A7000A2FE99 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E420A24AD7A7000A2FE99 /* UILabel+Extension.swift */; };
 		333E421424AD7A7000A2FE99 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E420B24AD7A7000A2FE99 /* UIView+Extension.swift */; };
@@ -74,6 +75,7 @@
 		3334EB2A24A896960048CCB4 /* SKSugarSwiftExampleTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSugarSwiftExampleTestController.swift; sourceTree = "<group>"; };
 		3334EB2C24A897170048CCB4 /* SKExtensionHomeTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKExtensionHomeTestController.swift; sourceTree = "<group>"; };
 		3334EB2F24A89C9D0048CCB4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		333D02BA253E95D300B1E85A /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		333E420924AD7A7000A2FE99 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		333E420A24AD7A7000A2FE99 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		333E420B24AD7A7000A2FE99 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				333E420B24AD7A7000A2FE99 /* UIView+Extension.swift */,
 				333E420C24AD7A7000A2FE99 /* Bundle+Extension.swift */,
 				33F035B824DA5C7D00B0B87C /* UITableView+Extension.swift */,
+				333D02BA253E95D300B1E85A /* UIButton+Extension.swift */,
 			);
 			path = SKExtension;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				333E421724AD7A7000A2FE99 /* a.swift in Sources */,
 				3311A3BA24ADC603008828D2 /* SKNetworkManagerTestController.swift in Sources */,
 				333E421424AD7A7000A2FE99 /* UIView+Extension.swift in Sources */,
+				333D02BB253E95D300B1E85A /* UIButton+Extension.swift in Sources */,
 				33F035BB24DABF6400B0B87C /* UITableViewExtensionTestController.swift in Sources */,
 				3334EB2D24A897170048CCB4 /* SKExtensionHomeTestController.swift in Sources */,
 				33F035B924DA5C7D00B0B87C /* UITableView+Extension.swift in Sources */,

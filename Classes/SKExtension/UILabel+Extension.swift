@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol ColorSelectorable {
+    
+}
+
 public extension UILabel {    
     
     /// gx_根据 text/ fontSize/ color/ alignment/ isBold/ isFreedom/ (^tapAction) 创建 label
@@ -24,10 +28,7 @@ public extension UILabel {
     {
         self.init()
         
-        text = gx_text
-        textColor = color
-        textAlignment = alignment
-        font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
+        set(gx_text: gx_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold)
         
         if !isFreedom { sizeToFit() }
         if let action = tapAction { addTapGestureAction(tapAction: action) }
@@ -47,14 +48,29 @@ public extension UILabel {
     {
         self.init()
         
-        text = gx_text
-        textColor = UIColor(hex: Int32(colorHex))
-        textAlignment = alignment
-        font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
+        set(gx_text: gx_text, fontSize: fontSize, colorHex: colorHex, alignment: alignment, isBold: isBold)
         
         if !isFreedom { sizeToFit() }
         if let action = tapAction { addTapGestureAction(tapAction: action) }
     }
+}
+
+// MARK: -  set attrs
+public extension UILabel { 
+    
+    func set(gx_text: String, fontSize: CGFloat, colorHex: UInt32, alignment: NSTextAlignment, isBold: Bool) {
+        set(gx_text: gx_text, fontSize: fontSize, color: UIColor(hex: Int32(colorHex)), alignment: alignment, isBold: isBold)
+    }
+    
+    
+    func set(gx_text: String, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, isBold: Bool) {
+        text = gx_text
+        textColor = color
+        textAlignment = alignment
+        font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
+    }
+    
+    
 }
 
 
@@ -72,7 +88,7 @@ fileprivate extension UIColor {
 
 
 
-typealias TapClosure = () -> Void
+public typealias TapClosure = () -> Void
 
 // MARK: - tapAction
 public extension UILabel {

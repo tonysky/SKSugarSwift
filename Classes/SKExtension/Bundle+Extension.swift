@@ -9,7 +9,7 @@
 import Foundation 
 import UIKit
 
-extension Bundle {
+public extension Bundle {
     
     /// 返回命名空间 namespace (计算型属性)
     public var namespace: String {
