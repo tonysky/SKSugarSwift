@@ -85,6 +85,94 @@ public extension UIButton {
         self.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
     }
     
+    /// 创建 button title/ fontSize = 14/ titlecolorNormal/ imageName/ imageArrangement = .imageLeft/ target/ action（Swift 6 params）
+    convenience init(gx_title: String, fontSize: CGFloat = 14, titleColorNormal: UIColor, imageName: String?,
+                     target: Any?, action: Selector)
+    {
+        self.init()
+        
+        setTitle(gx_title, for: .normal)
+        setTitleColor(titleColorNormal, for: .normal)
+        
+        setImage(UIImage.init(named: imageName ?? ""), for: .normal)
+        imageView?.sizeToFit()
+        
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        titleLabel?.numberOfLines = 0
+        titleLabel?.sizeToFit()
+        
+        addTarget(target, action: action, for: .touchUpInside)
+        sizeToFit()
+    }
+    
+    /// 创建 button (使用图片)（Swift 4 params）
+    ///
+    /// - Parameters:
+    ///   - title: 标题 title
+    ///   - fontSize: 标题字体大小
+    ///   - imageNormal: 默认状态图片
+    ///   - imageHighlighted: 高亮状态图片
+    convenience init(title: String, fontSize: CGFloat,
+                     imageNormal: UIImage, imageHighlighted: UIImage)
+    {
+        self.init()
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        
+        setImage(imageNormal, for: .normal)
+        setImage(imageHighlighted, for: .highlighted)
+
+        sizeToFit()
+    }
+    
+    /// 创建 button (使用图片名称)（Swift 2 params）
+    ///
+    /// - Parameters:
+    ///   - imageNameNormal: 默认状态图片
+    ///   - imageNameHighlighted: 高亮状态图片
+    convenience init(imageNameNormal: String, imageNameHighlighted: String)
+    {
+        self.init()
+        
+        setImage(UIImage.init(named: imageNameNormal), for: .normal)
+        setImage(UIImage.init(named: imageNameHighlighted), for: .highlighted)
+        
+        sizeToFit()
+    }
+    
+    
+    /// 根据 image 和 backgroundImage 创建 button    
+    ///
+    /// - Parameters:
+    ///   - imageName: button 的 image
+    ///   - backgroundImageName: button 的 backgroundImage
+    convenience init(imageName: String, backgroundImageName: String) 
+    {
+        self.init()
+        
+        setImage(UIImage.init(named: imageName), for: .normal)
+        let imgNameHL = imageName + "_highlighted"
+        setImage(UIImage.init(named: imgNameHL), for: .highlighted)
+        
+        setBackgroundImage(UIImage.init(named: backgroundImageName), for: .normal)
+        let bgImgNameHL = backgroundImageName + "_highlighted"
+        setBackgroundImage(UIImage.init(named: bgImgNameHL), for: .highlighted)
+    }
+    
+    /// title/ fontSize = 14/ color = black/ bgImageName/ (^handle)
+    convenience init(gx_title: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, backgroundImageName: String, handle: ClickClosure? = nil) 
+    {
+        self.init()
+        
+        setTitle(gx_title, for: .normal)
+        setBackgroundImage(UIImage.init(named: backgroundImageName), for: .normal)
+        
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitleColor(color, for: .normal)
+        
+        addClickClosure(handle)
+    }
+    
+    
 }
 
 
