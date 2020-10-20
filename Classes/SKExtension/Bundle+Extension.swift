@@ -12,12 +12,12 @@ import UIKit
 public extension Bundle {
     
     /// 返回命名空间 namespace (计算型属性)
-    public var namespace: String {
+    var namespace: String {
         return infoDictionary?["CFBundleName"] as? String ?? ""
     }
     
     /// 返回命名空间 namespace. (后面+点号)
-    public var namespaceDot: String {
+    var namespaceDot: String {
         return namespace + "."
     }
     
