@@ -19,16 +19,19 @@ public extension UIButton {
         sizeToFit()
     }
     
-    convenience init(image: UIImage, imageSelected: UIImage) {
+    convenience init(image: UIImage, imageSelected: UIImage, target: Any? = nil, action: Selector? = nil) {
         self.init()
         setImage(image, for: .normal)
         setImage(imageSelected, for: .selected)
+        
+        guard let target = target, let action = action else { return }
+        addTarget(target, action: action, for: .touchUpInside)
     }
     
-    convenience init(imageName: String, imageNameSelected: String) {
+    convenience init(imageName: String, imageNameSelected: String, target: Any? = nil, action: Selector? = nil) {
         if let image = UIImage(named: imageName),
            let selectedImage = UIImage(named: imageNameSelected)
-        { self.init(image: image, imageSelected: selectedImage) }
+        { self.init(image: image, imageSelected: selectedImage, target: target, action: action) }
         else { self.init() }
     }
     
