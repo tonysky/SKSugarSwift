@@ -10,7 +10,7 @@ import UIKit
 
 class UIColorExtensionTestController: BaseViewController {
     
-    private lazy var label = UILabel("哈哈哈", fontSize: 20, color: UIColor.purple, alignment: .right, isBold: true)
+    private lazy var label = UILabel(sk_text: "哈哈哈", fontSize: 20, color: UIColor.purple, alignment: .right, isBold: true)
 
     override func viewDidLoad() {
         super.viewDidLoad()

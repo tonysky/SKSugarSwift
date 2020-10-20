@@ -24,11 +24,11 @@ public extension UILabel {
     ///   - isBold: 当前字体是否加粗
     ///   - isFreedom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
     ///   - tapAction: 点击时的 closure 回调
-    convenience init(_ gx_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, isFreedom: Bool = false, tapAction: (() -> Void)? = nil)
+    convenience init(sk_text: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, alignment: NSTextAlignment = .left, isBold: Bool = false, isFreedom: Bool = false, tapAction: (() -> Void)? = nil)
     {
         self.init()
         
-        set(gx_text: gx_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold)
+        set(sk_text: sk_text, fontSize: fontSize, color: color, alignment: alignment, isBold: isBold)
         
         if !isFreedom { sizeToFit() }
         if let action = tapAction { addTapGestureAction(tapAction: action) }
@@ -44,11 +44,11 @@ public extension UILabel {
     ///   - isBold: 当前字体是否加粗
     ///   - isFreedom: 是否不根据内容自动撑起（true - 自由大小，不根据内容撑起；false - sizeToFit根据内容撑起）
     ///   - tapAction: 点击时的 closure 回调
-    convenience init(_ gx_text: String, fontSize: CGFloat = 14, colorHex: UInt32 = 0x000000, alignment: NSTextAlignment = .left, isBold: Bool = false, isFreedom: Bool = false, tapAction: (() -> Void)? = nil)
+    convenience init(_ sk_text: String, fontSize: CGFloat = 14, colorHex: UInt32 = 0x000000, alignment: NSTextAlignment = .left, isBold: Bool = false, isFreedom: Bool = false, tapAction: (() -> Void)? = nil)
     {
         self.init()
         
-        set(gx_text: gx_text, fontSize: fontSize, colorHex: colorHex, alignment: alignment, isBold: isBold)
+        set(sk_text: sk_text, fontSize: fontSize, colorHex: colorHex, alignment: alignment, isBold: isBold)
         
         if !isFreedom { sizeToFit() }
         if let action = tapAction { addTapGestureAction(tapAction: action) }
@@ -58,13 +58,13 @@ public extension UILabel {
 // MARK: -  set attrs
 public extension UILabel { 
     
-    func set(gx_text: String, fontSize: CGFloat, colorHex: UInt32, alignment: NSTextAlignment, isBold: Bool) {
-        set(gx_text: gx_text, fontSize: fontSize, color: UIColor(hex: Int32(colorHex)), alignment: alignment, isBold: isBold)
+    func set(sk_text: String, fontSize: CGFloat, colorHex: UInt32, alignment: NSTextAlignment, isBold: Bool) {
+        set(sk_text: sk_text, fontSize: fontSize, color: UIColor(hex: Int32(colorHex)), alignment: alignment, isBold: isBold)
     }
     
     
-    func set(gx_text: String, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, isBold: Bool) {
-        text = gx_text
+    func set(sk_text: String, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, isBold: Bool) {
+        text = sk_text
         textColor = color
         textAlignment = alignment
         font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
