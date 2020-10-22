@@ -41,7 +41,7 @@ public extension UIButton {
 
     
     /// 根据 title、fontSize=14、isFontBold=false、color=black、colorHighlighted=gray、backgroundColor=white、(^handle)=nil 创建button
-    convenience init (gx_title: String, 
+    convenience init (sk_title: String, 
                       fontSize: CGFloat = 14, 
                       isFontBold: Bool = false,
                       color: UIColor = UIColor.black, 
@@ -51,7 +51,7 @@ public extension UIButton {
     {
         self.init()
         
-        setTitle(gx_title, for: .normal)
+        setTitle(sk_title, for: .normal)
         titleLabel?.font = isFontBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
         
         setTitleColor(color, for: .normal)
@@ -66,7 +66,7 @@ public extension UIButton {
     }
     
     /// 根据 title、fontSize=14、color=black、colorHighlighted=gray、backgroundColor=white、target、action 创建button
-    convenience init (gx_title: String, 
+    convenience init (sk_title: String, 
                       fontSize: CGFloat = 14, 
                       color: UIColor = UIColor.black, 
                       colorHighlighted: UIColor = UIColor.gray, 
@@ -75,7 +75,7 @@ public extension UIButton {
     {
         self.init()
         
-        setTitle(gx_title, for: .normal)
+        setTitle(sk_title, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         setTitleColor(color, for: .normal)
         setTitleColor(colorHighlighted, for: .highlighted)
@@ -89,12 +89,12 @@ public extension UIButton {
     }
     
     /// 创建 button title/ fontSize = 14/ titlecolorNormal/ imageName/ imageArrangement = .imageLeft/ target/ action（Swift 6 params）
-    convenience init(gx_title: String, fontSize: CGFloat = 14, titleColorNormal: UIColor, imageName: String?,
+    convenience init(sk_title: String, fontSize: CGFloat = 14, titleColorNormal: UIColor, imageName: String?,
                      target: Any?, action: Selector)
     {
         self.init()
         
-        setTitle(gx_title, for: .normal)
+        setTitle(sk_title, for: .normal)
         setTitleColor(titleColorNormal, for: .normal)
         
         setImage(UIImage.init(named: imageName ?? ""), for: .normal)
@@ -162,11 +162,11 @@ public extension UIButton {
     }
     
     /// title/ fontSize = 14/ color = black/ bgImageName/ (^handle)
-    convenience init(gx_title: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, backgroundImageName: String, handle: ClickClosure? = nil) 
+    convenience init(sk_title: String, fontSize: CGFloat = 14, color: UIColor = UIColor.black, backgroundImageName: String, handle: ClickClosure? = nil) 
     {
         self.init()
         
-        setTitle(gx_title, for: .normal)
+        setTitle(sk_title, for: .normal)
         setBackgroundImage(UIImage.init(named: backgroundImageName), for: .normal)
         
         titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
