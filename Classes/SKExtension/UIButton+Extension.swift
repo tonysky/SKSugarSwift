@@ -177,8 +177,8 @@ public extension UIButton {
     
     
     
-    /// title/ fontSize=14/ color=black/ colorSelected = blue/ isBold=false
-    convenience init(sk_title: String, fontSize: CGFloat = 14, color: UIColor = .black, colorSelected: UIColor = .blue, isBold: Bool = false)
+    /// title/ fontSize=14/ color=black/ colorSelected=blue/ isBold=false/ target=nil/ action=nil
+    convenience init(sk_title: String, fontSize: CGFloat = 14, color: UIColor = .black, colorSelected: UIColor = .blue, isBold: Bool = false, target: Any? = nil, action: Selector? = nil)
     {
         self.init()
         
@@ -186,6 +186,9 @@ public extension UIButton {
         setTitleColor(color, for: .normal)
         setTitleColor(colorSelected, for: .selected)
         titleLabel?.font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
+        
+        guard let target = target, let action = action else { return }
+        addTarget(target, action: action, for: .touchUpInside)
     }
     
 }
