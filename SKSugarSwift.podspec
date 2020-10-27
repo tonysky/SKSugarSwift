@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SKSugarSwift'
-  s.version          = '0.2.28'
+  s.version          = '0.2.29'
   s.summary          = 'A short description of SKSugarSwift.'
 
 # This description is used to generate tags and improve search results.

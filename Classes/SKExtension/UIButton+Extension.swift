@@ -176,6 +176,18 @@ public extension UIButton {
     }
     
     
+    
+    /// title/ fontSize=14/ color=black/ colorSelected = blue/ isBold=false
+    convenience init(sk_title: String, fontSize: CGFloat = 14, color: UIColor = .black, colorSelected: UIColor = .blue, isBold: Bool = false)
+    {
+        self.init()
+        
+        setTitle(sk_title, for: .normal)
+        setTitleColor(color, for: .normal)
+        setTitleColor(colorSelected, for: .selected)
+        titleLabel?.font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
+    }
+    
 }
 
 
