@@ -41,3 +41,23 @@ public extension UIColor {
         )
     }
 }
+
+
+public extension UIColor {
+    
+    /// skyBlue: 0x66ccff
+    class var skyBlue: UIColor { UIColor(hex: 0x66ccff) }
+    
+    /// 118, 166, 248
+    class var system_Blue: UIColor { UIColor(red: 118, green: 166, blue: 248, alpha: 1) }
+    
+    
+}
+
+
+
+
+
+
+
+
